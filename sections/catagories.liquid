@@ -1,0 +1,56 @@
+<div class="categories-section">
+  <div class="container">
+    <ul class="categories-list">
+      {% for catagory in section.blocks %}
+        <a href="{{catagory.settings.single_catagory_url}}" class="categories-item text-center">
+          <li>
+            <img
+              class="rounded-circle"
+              src="{{catagory.settings.single_catagory_image |  image_url: width: 50, height: 50, crop: 'center' }}"
+              alt="{{catagory.settings.single_catagory_title}}"
+              width="50px"
+              height="50px"
+            >
+            <span class="d-block pt-15 "> {{ catagory.settings.single_catagory_title }} </span>
+          </li>
+        </a>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Product Categories",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "product_categories_block",
+      "name": "Catagory Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "single_catagory_title",
+          "label": "Single Catagory Title",
+          "default": "Catagory Title"
+        },
+        {
+          "type": "url",
+          "id": "single_catagory_url",
+          "label": "Add a link to the single catagory"
+        },
+        {
+          "type": "image_picker",
+          "id": "single_catagory_image",
+          "label": "Single Catagory Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Product Categories"
+    }
+  ]
+}
+{% endschema %}
