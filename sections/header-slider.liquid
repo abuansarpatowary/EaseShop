@@ -2,111 +2,55 @@
 <section class="slider-section">
   <div class="slider-box">
     <div class="slider-active">
-      <div class="single-slider single-slider-bg-1 slider-height">
-        <div class=" u-padding ">
-          <div class="container">
-            <div class="row">
-              <div class="col-xl-6 col-lg-8 col-sm-8">
-                <div class="slider-text">
-                  <div class="slider-heading">
-                    <h1>Face mask</h1>
-                  </div>
-                  <div class="slider-para">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do<br>
-                      eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                  </div>
-                  <div class=" btn-black mt-10">
-                    <span>SHOP NOW</span>
-                  </div>
-                  <div class="profile mt-35">
-                    <img src="img/profile-mg/profile-circle.png" alt="" class="f-left pr-2">
-                    <span class="fix mt-10"> 1K+ customers purchased this mask </span>
+      {% for slide in section.blocks %}
+        <div
+          class="single-slider single-slider-bg-1 slider-height"
+          data-background="{{ slide.settings.image | img_url: 'master' }}"
+        >
+          <div class=" u-padding ">
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-6 col-lg-8 col-sm-8">
+                  <div class="slider-text">
+                    <div class="slider-heading">
+                      <h1>{{ slide.settings.slider_title }}</h1>
+                    </div>
+                    <div class="slider-para">
+                      <p>{{ slide.settings.slider_description }}</p>
+                    </div>
+                    <div class=" btn-black mt-10">
+                      <span
+                        ><a href="{{ slide.settings.slider_button_url }}">
+                          {{- slide.settings.slider_button_text -}}
+                        </a></span
+                      >
+                    </div>
+                    <div class="profile mt-35">
+                      <img src="img/profile-mg/profile-circle.png" alt="" class="f-left pr-2">
+                      <span class="fix mt-10"> 1K+ customers purchased this mask </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-xl-6 col-lg-4 col-sm-4">
-                <span>
-                  <!-- blank -->
-                </span>
+                <div class="col-xl-6 col-lg-4 col-sm-4">
+                  <span>
+                    <!-- blank -->
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="single-slider single-slider-bg-2 slider-height">
-        <div class="slider-text u-padding">
-          <div class="container">
-            <div class="row">
-              <div class="col-xl-6 col-lg-8 col-sm-8">
-                <div class="slider-text">
-                  <div class="slider-heading">
-                    <h1>Clothing</h1>
-                  </div>
-                  <div class="slider-para">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do<br>
-                      eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                  </div>
-                  <div class="btn-black mt-10">
-                    <span>SHOP NOW</span>
-                  </div>
-                  <div class="profile mt-35">
-                    <img src="img/profile-mg/profile-circle.png" alt="" class="f-left pr-2">
-                    <span class="fix mt-10"> 1K+ customers purchased this cloth </span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-6 col-lg-4 col-sm-4">
-                <span>
-                  <!-- blank -->
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="single-slider single-slider-bg-3 slider-height">
-        <div class="slider-text u-padding">
-          <div class="container">
-            <div class="row">
-              <div class="col-xl-6 col-lg-8 col-sm-8">
-                <div class="slider-text">
-                  <div class="slider-heading">
-                    <h1>Accessories</h1>
-                  </div>
-                  <div class="slider-para-3">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do<br>
-                      eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                  </div>
-                  <div class="btn-black mt-10">
-                    <span>SHOP NOW</span>
-                  </div>
-                  <div class="profile mt-35">
-                    <img src="img/profile-mg/profile-circle.png" alt="" class="f-left pr-2">
-                    <span class="fix mt-10 text-white"> 1K+ customers purchased Accessories </span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-6 col-lg-4 col-sm-4">
-                <span>
-                  <!-- blank -->
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
 <!-- Slider section End -->
 
 {% javascript %}
+  // data-background
+  $('[data-background]').each(function () {
+    $(this).css('background-image', 'url(' + $(this).attr('data-background') + ')');
+  });
   // mainSlider
   function mainSlider() {
     var BasicSlider = $('.slider-active');
@@ -151,35 +95,43 @@
 {% schema %}
 {
   "name": "header slider",
-  "settings": [
+  "blocks": [
     {
-      "type": "header",
-      "content": "Header Slider"
-    },
-    {
-      "type": "text",
-      "id": "slider_heading",
-      "default": "Your Slider Heading",
-      "label": "Write Slider Heading"
-    },
-    {
-      "type": "textarea",
-      "id": "slider_description",
-      "default": "Your Slider Description",
-      "label": "Enter Slider Description"
-    },
-    {
-      "type": "text",
-      "id": "slider_button_text",
-      "default": "Show More",
-      "label": "Enter Button Text"
-    },
-    {
-      "type": "url",
-      "id": "slider_button_url",
-      "label": "Enter Button URL"
+      "type": "slider_image",
+      "name": "Slider Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "slider_title",
+          "label": "Slider Title",
+          "default": "Face mask"
+        },
+        {
+          "type": "textarea",
+          "id": "slider_description",
+          "label": "Slider Description",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        },
+        {
+          "type": "text",
+          "id": "slider_button_text",
+          "label": "Button Text",
+          "default": "SHOP NOW"
+        },
+        {
+          "type": "url",
+          "id": "slider_button_url",
+          "label": "URL"
+        }
+      ]
     }
   ],
+
   "presets": [
     {
       "name": "Header Slider",
