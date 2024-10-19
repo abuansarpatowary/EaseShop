@@ -67,9 +67,27 @@
           "settings": {
             "single_catagory_title": "Stickers"
           }
+        },
+        "catagory6": {
+          "type": "product_categories_block",
+          "settings": {
+            "single_catagory_title": "Chips"
+          }
+        },
+        "catagory7": {
+          "type": "product_categories_block",
+          "settings": {
+            "single_catagory_title": "Nuts"
+          }
+        },
+        "catagory8": {
+          "type": "product_categories_block",
+          "settings": {
+            "single_catagory_title": "Add Catagory"
+          }
         }
       },
-      "block_order": ["catagory1", "catagory2", "catagory3", "catagory4", "catagory5"]
+      "block_order": ["catagory1", "catagory2", "catagory3", "catagory4", "catagory5", "catagory6", "catagory7", "catagory8"]
     },
     "image_banner": {
       "type": "image-banner",
