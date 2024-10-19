@@ -5,7 +5,7 @@
       {% for slide in section.blocks %}
         <div
           class="single-slider single-slider-bg-1 slider-height"
-          data-background="{% if slide.settings.image == blank %}'https://images.pexels.com/photos/28975090/pexels-photo-28975090/free-photo-of-tranquil-boat-ride-on-yamuna-river-at-dusk.jpeg'{% else%} slide.settings.image | img_url: 'master' {% endif %}"
+          data-background="{% if slide.settings.image == blank %}'https://pussy-food.myshopify.com/cdn/shop/files/sustainable-packaging-design_1096x519_0ae4ac65-b886-47ca-8ed1-301e38336b3d.jpg?v=1728843835'{% else %} {{ slide.settings.image | img_url: 'master' }} {% endif %}"
         >
           <div class=" u-padding ">
             <div class="container">
