@@ -19,11 +19,9 @@
                       <p>{{ slide.settings.slider_description }}</p>
                     </div>
                     <div class=" btn-black mt-10">
-                      <span
-                        ><a href="{{ slide.settings.slider_button_url }}">
-                          {{- slide.settings.slider_button_text -}}
-                        </a></span
-                      >
+                      <a href="{{ slide.settings.slider_button_url }}" class="text-white">
+                        {{- slide.settings.slider_button_text -}}
+                      </a>
                     </div>
                     <div class="profile mt-35">
                       <img src="img/profile-mg/profile-circle.png" alt="" class="f-left pr-2">
@@ -67,8 +65,8 @@
       autoplaySpeed: 10000,
       dots: false,
       fade: false,
-      prevArrow: '<button type="button" class= "slick-prev">←</button>',
-      nextArrow: '<button type="button" class= "slick-next">→</button>',
+      prevArrow: '<button type="button" class= "slick-prev font-weight-bold">←</button>',
+      nextArrow: '<button type="button" class= "slick-next font-weight-bold">→</button>',
       arrows: true,
       responsive: [{ breakpoint: 767, settings: { dots: false, arrows: false } }],
     });
