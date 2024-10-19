@@ -35,6 +35,60 @@
         "slide4"
       ]
     },
+    "product_catagories":{
+      "type": "catagories",
+      "blocks": {
+        "catagory1": {
+          "type": "product_categories_block",
+          "settings": {
+            "single_catagory_title": "Trending"
+          }
+        },
+        "catagory2": {
+          "type": "product_categories_block",
+          "settings": {
+            "single_catagory_title": "Face Mask"
+          }
+        },
+        "catagory3": {
+          "type": "product_categories_block",
+          "settings": {
+            "single_catagory_title": "Outdoor"
+          }
+        },
+        "catagory4": {
+          "type": "product_categories_block",
+          "settings": {
+            "single_catagory_title": "Tote bags"
+          }
+        },
+        "catagory5": {
+          "type": "product_categories_block",
+          "settings": {
+            "single_catagory_title": "Stickers"
+          }
+        },
+        "catagory6": {
+          "type": "product_categories_block",
+          "settings": {
+            "single_catagory_title": "Chips"
+          }
+        },
+        "catagory7": {
+          "type": "product_categories_block",
+          "settings": {
+            "single_catagory_title": "Nuts"
+          }
+        },
+        "catagory8": {
+          "type": "product_categories_block",
+          "settings": {
+            "single_catagory_title": "Add Catagory"
+          }
+        }
+      },
+      "block_order": ["catagory1", "catagory2", "catagory3", "catagory4", "catagory5", "catagory6", "catagory7", "catagory8"]
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -236,6 +290,7 @@
   },
   "order": [
     "header_slider",
+    "product_catagories",
     "image_banner",
     "rich_text",
     "featured_collection",
