@@ -1,5 +1,40 @@
 {
   "sections": {
+    "header_slider": {
+      "type": "header-slider",
+      "blocks": {
+        "slide1": {
+          "type": "slider_image",
+          "settings": {
+            "slider_title": "Accessories available"
+          }
+        },
+        "slide2": {
+          "type": "slider_image",
+          "settings": {
+            "slider_title": "Pets available"
+          }
+        },
+        "slide3": {
+          "type": "slider_image",
+          "settings": {
+            "slider_title": "Products available"
+          }
+        },
+        "slide4": {
+          "type": "slider_image",
+          "settings": {
+            "slider_title": "Products available",
+          }
+        }
+      },
+      "block_order": [
+        "slide1",
+        "slide2",
+        "slide3",
+        "slide4"
+      ]
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -200,6 +235,7 @@
     }
   },
   "order": [
+    "header_slider",
     "image_banner",
     "rich_text",
     "featured_collection",
