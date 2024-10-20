@@ -1,0 +1,73 @@
+<section class="about-bg" data-background="{{ section.settings.image | img_url: 'master'  }}">
+  <div class="container">
+    <div class="row d-flex align-items-center">
+      <div class="col-xl-5 col-lg-5 col-sm-0">
+        <!-- img -->
+      </div>
+      <div class="col-xl-7 col-lg-7 col-sm-12">
+        <div class="text-box">
+          <h2>{{ section.settings.create_own_title }}</h2>
+          <hr>
+          <p>
+            {{ section.settings.create_own_description_1 }}
+          </p>
+          <p>
+            {{ section.settings.create_own_description_2 }}
+          </p>
+        </div>
+        <div class="btn-black mt-20">
+          <span
+            ><a href="{{ section.settings.button_url }}">{{ section.settings.button_text }}</a></span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "create own",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "create_own_title",
+      "label": "Slider Title",
+      "default": "Face mask"
+    },
+    {
+      "type": "textarea",
+      "id": "create_own_description_1",
+      "label": "Slider Description 1",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "type": "textarea",
+      "id": "create_own_description_2",
+      "label": "Slider Description 2",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Create Own",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

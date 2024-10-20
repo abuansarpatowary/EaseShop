@@ -7,6 +7,11 @@
   // 	meanScreenWidth: "992"
   // });
 
+  // data-background
+  $('[data-background]').each(function () {
+    $(this).css('background-image', 'url(' + $(this).attr('data-background') + ')');
+  });
+
   const menu = document.querySelector('.menu');
   const menuMain = menu.querySelector('.menu-main');
   const goBack = menu.querySelector('.go-back');
