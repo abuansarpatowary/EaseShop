@@ -2,6 +2,9 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "top_navbar": {
+      "type": "top-navbar",
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -38,7 +41,8 @@
     }
   },
   "order": [
-    "announcement-bar",
-    "header"
+    "top_navbar",
+    // "announcement-bar",
+    // "header"
   ]
 }

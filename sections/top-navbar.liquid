@@ -4,9 +4,9 @@
       <div class="row d-flex align-items-center pt-10 ">
         <div class="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-3">
           <div class="logo">
-            <a href="index.html">
+            <a href="{{ shop.url }}">
               <img
-                src=" {% if shop.logo == blank %} {{ section.settings.logo |  img_url: 'medium' }} {% else %} {{ shop.logo }} {% endif %}"
+                src="{% if shop.logo == blank or shop.logo == nil %}{{ section.settings.logo | img_url: 'medium' }}{% else %}{{ shop.logo | img_url: 'medium' }}{% endif %}"
                 alt="{{ shop.name }}"
               >
             </a>
