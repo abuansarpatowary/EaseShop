@@ -1,20 +1,89 @@
-<!-- Categories section start -->
-<div class="categories-section">
+<section class="pb-70">
   <div class="container">
-    <ul class="categories-list">
-      {% for product in section.settings.product_collection %}
-        <a href="{{ product.url }}" class="categories-item text-center">
-          <li>
-            <img src="{{ product.featured_image |  image_url: width: 70, height: 70 }}" alt="{{ product.title }}">
-            <span class="d-block pt-15">
-              {{ product.title }}
+    <div class="row">
+      <div class="recommended-text-box pb-30">
+        <h2 class="heading-text">{{ section.settings.title }}</h2>
+        <span class="line-2"> </span>
+      </div>
+      <div class="f-product-box-1 d-flex align-items-center">
+        {% for featured_product in section.settings.product_collection %}
+          <div class="f-product pl-20">
+            <img
+              src="{{ featured_product.featured_image |  image_url: width:210, height:210  }}"
+              alt=""
+              class="b-img"
+              width="200px"
+              height="200px"
+            >
+            <span class="heart-icon-1">
+              <i class="fas fa-heart"></i>
             </span>
-          </li>
-        </a>
-      {% endfor %}
-    </ul>
+            <div class="card-text pt-20">
+              <h6>{{ featured_product.title }}</h6>
+              <span class="rating">
+                <img src="img/categorise-img/rating.png" alt="" class="rating-img">
+                <span class="rating-count">(10,002)</span>
+              </span>
+              <span class="price">${{ featured_product.price | divided_by: 100.00 }}</span>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="btn-black m-auto f-product-btn">
+        <span>SHOP NOW</span>
+      </div>
+    </div>
+    <!-- row end -->
   </div>
-</div>
+</section>
+
+{% style %}
+  /* Featured products section */
+
+  /* .f-product{
+  margin: 0 18px;
+} */
+
+  .f-product {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .f-product::after {
+    position: absolute;
+    content: '';
+    background: rgb(255, 255, 255);
+    width: 33px;
+    height: 32px;
+    border-radius: 100px;
+    top: 10px;
+    left: 75%;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.16));
+  }
+
+  .heart-icon-1 {
+    position: absolute;
+    top: 5.5%;
+    left: 79%;
+    z-index: 100;
+    color: #b1b1b1;
+    font-size: 14px;
+  }
+
+  .heart-icon-1 i:hover {
+    cursor: pointer;
+    color: red;
+  }
+
+  .b-img {
+    width: 100%;
+  }
+
+  .f-product-btn {
+    margin-top: 50px !important;
+  }
+{% endstyle %}
 
 {% schema %}
 {
