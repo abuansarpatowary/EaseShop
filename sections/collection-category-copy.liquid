@@ -1,0 +1,42 @@
+<!-- Categories section start -->
+<div class="categories-section">
+  <div class="container">
+    <ul class="categories-list">
+      {% for product in section.settings.product_collection %}
+        <a href="{{ product.url }}" class="categories-item text-center">
+          <li>
+            <img src="{{ product.featured_image |  image_url: width: 70, height: 70 }}" alt="{{ product.title }}">
+            <span class="d-block pt-15">
+              {{ product.title }}
+            </span>
+          </li>
+        </a>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection Category Copy",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Collection Title",
+      "default": "Product Categories"
+    },
+    {
+      "type": "product_list",
+      "id": "product_collection",
+      "label": "Product Category Collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Category Copy",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

@@ -6,8 +6,8 @@
           <div class="logo">
             <a href="{{ shop.url }}">
               <img
-                src="{% if shop.logo == blank or shop.logo == nil %}{{ section.settings.logo | img_url: 'medium' }}{% else %}{{ shop.logo | img_url: 'medium' }}{% endif %}"
-                alt="{{ shop.name }}"
+                src="{% if shop.brand.logo == blank or shop.brand.logo == nil %}{{ section.settings.logo | img_url: 'medium' }}{% else %}{{ shop.brand.logo | img_url: 'medium' }}{% endif %}"
+                alt="{{ shop.brand.name }}"
               >
             </a>
           </div>

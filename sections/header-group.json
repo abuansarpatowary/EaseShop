@@ -42,7 +42,7 @@
   },
   "order": [
     "top_navbar",
-    // "announcement-bar",
-    // "header"
+    "announcement-bar",
+    "header"
   ]
 }
