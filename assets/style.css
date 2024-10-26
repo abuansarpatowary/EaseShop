@@ -286,7 +286,9 @@ button {
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
 }
-
+.btn-black>span>a{
+  color: #fff;
+}
 .btn-orange:hover {
   background: #343434;
   transform: translateY(-5px);
@@ -658,8 +660,8 @@ i.fas.fa-arrow-up {
 
 .heart-icon {
   position: absolute;
-  top: 5%;
-  left: 80.5%;
+  top: 4%;
+  left: 80.3%;
   z-index: 100;
   color: #b1b1b1;
   font-size: 14px;
