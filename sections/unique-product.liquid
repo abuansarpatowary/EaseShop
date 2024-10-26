@@ -1,0 +1,122 @@
+<!-- Shopify Section: Unique Product -->
+<div class="container">
+  <div class="row">
+    <!-- Dynamic title from schema settings -->
+    <div class="recommended-text-box">
+      <h2 class="heading-text">{{ section.settings.title }}</h2>
+    </div>
+
+    <span class="line pt-20"> </span>
+
+    <!-- Tab structure with dynamic content -->
+    <div class="p-5 p-sm-0 pb-0 rounded shadow mt-20">
+      <!-- Rounded tabs -->
+      <ul
+        id="myTab"
+        role="tablist"
+        class="nav nav-tabs nav-pills flex-column flex-sm-row text-center border-0 rounded-nav"
+      >
+        {% for block in section.blocks %}
+          <li class="nav-item flex-sm-fill">
+            <a
+              id="tab-{{ block.id }}"
+              data-toggle="tab"
+              href="#tab-content-{{ block.id }}"
+              role="tab"
+              aria-controls="tab-content-{{ block.id }}"
+              aria-selected="true"
+              class="nav-link border-0 text-uppercase font-weight-bold {% if forloop.first %} active {% endif %}"
+            >
+              {{ block.settings.collection.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <div id="myTabContent" class="tab-content">
+        {% for block in section.blocks %}
+          <div
+            id="tab-content-{{ block.id }}"
+            role="tabpanel"
+            aria-labelledby="tab-{{ block.id }}"
+            class="tab-pane fade px-4 py-5 {% if forloop.first %} show active {% endif %}"
+          >
+            <div class="container">
+              <div class="row d-flex align-items-center">
+                {% assign collection_handle = block.settings.collection.handle %}
+                {% assign products = collections[collection_handle].products %}
+
+                {% for product in products limit: 4 %}
+                  <div class="col-xl-3 col-lg-3 col-sm-3 col-12">
+                    <div class="f-product-tab">
+                      <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
+                      <span class="heart-icon-2">
+                        <i class="fas fa-heart"></i>
+                      </span>
+                      <span class="u-price"> {{ product.price | money }} </span>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+
+              {% if block.settings.shop_now %}
+                <div class="btn-black m-auto f-product-btn">
+                  <a href="/collections/{{ block.settings.collection.handle }}"><span>SHOP NOW</span></a>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <!-- End rounded tabs -->
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Unique Product",
+  "tag": "section",
+  "class": "bg-unique-item pt-60",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Discover unique hand-picked items"
+    },
+    {
+      "type": "checkbox",
+      "id": "useslider",
+      "label": "Use slider",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "limit": 15,
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "checkbox",
+          "id": "shop_now",
+          "label": "Show view all",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Unique Product",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
