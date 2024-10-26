@@ -61,11 +61,14 @@
     "collection_list_section":{
       "type": "collection-list-section"
     },
-    "collection_category":{
-      "type": "collection-category-copy",
-    },
     "recomended_products":{
       "type": "recommended-product"
+    },
+    "collection_category":{
+      "type": "featured-product-section",
+    },
+    "unique_product_section": {
+      "type": "unique-product"
     }
     // "image_banner": {
     //   "type": "image-banner",
@@ -282,8 +285,9 @@
   "order": [
     "header_slider",
     "collection_list_section",
+    "recomended_products",
     "collection_category",
-    "recomended_products"
+    "unique_product_section"
     // "image_banner",
     // "rich_text",
     // "featured_collection",
