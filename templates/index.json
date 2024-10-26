@@ -60,6 +60,9 @@
     },
     "collection_category":{
       "type": "collection-category-copy",
+    },
+    "recomended_products":{
+      "type": "recommended-product"
     }
     // "image_banner": {
     //   "type": "image-banner",
@@ -275,7 +278,8 @@
   },
   "order": [
     "header_slider",
-    "collection_category"
+    "collection_category",
+    "recomended_products"
     // "image_banner",
     // "rich_text",
     // "featured_collection",
