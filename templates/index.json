@@ -9,12 +9,6 @@
  */
 {
   "sections": {
-    "top_navbar_tkqziU": {
-      "type": "top-navbar",
-      "settings": {
-        "logo": "shopify://shop_images/logo.png"
-      }
-    },
     "header_slider": {
       "type": "header-slider",
       "blocks": {
@@ -277,7 +271,6 @@
     }
   },
   "order": [
-    "top_navbar_tkqziU",
     "header_slider",
     "image_banner",
     "rich_text",
