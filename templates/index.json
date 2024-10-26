@@ -58,6 +58,9 @@
       "settings": {
       }
     },
+    "collection_list_section":{
+      "type": "collection-list-section"
+    },
     "collection_category":{
       "type": "collection-category-copy",
     },
@@ -278,6 +281,7 @@
   },
   "order": [
     "header_slider",
+    "collection_list_section",
     "collection_category",
     "recomended_products"
     // "image_banner",
