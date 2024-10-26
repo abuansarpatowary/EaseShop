@@ -21,11 +21,11 @@
 */
 
 /* 1. Theme default css */
-@import url("https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;600;700&family=Josefin+Sans:wght@100;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;600;700&family=Josefin+Sans:wght@100;300;400;500;600;700&display=swap');
 
 body {
-  font-family: "Encode Sans", sans-serif;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Encode Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: normal;
   font-style: normal;
   overflow-x: hidden;
@@ -100,7 +100,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: normal;
   color: #313131;
   margin-top: 0px;
@@ -235,7 +235,7 @@ button {
 
 .theme-overlay::before {
   background: #1696e7 none repeat scroll 0 0;
-  content: "";
+  content: '';
   height: 100%;
   left: 0;
   opacity: 0.6;
@@ -454,7 +454,7 @@ i.fas.fa-arrow-up {
   padding-left: 30px;
 }
 
-.search-box .button {
+.search-box .search-button {
   position: absolute;
   top: 23%;
   background: none;
@@ -463,12 +463,12 @@ i.fas.fa-arrow-up {
   left: 90%;
 }
 
-.search-box .button i {
+.search-box .search-button i {
   font-size: 20px;
   transition: all 0.3s;
 }
 
-.search-box .button i:hover {
+.search-box .search-button i:hover {
   color: #ff4c13;
 }
 
@@ -506,21 +506,21 @@ i.fas.fa-arrow-up {
 /* slider */
 
 .single-slider-bg-1 {
-  background-image: url("../img/slider/slider-1.png");
+  background-image: url('../img/slider/slider-1.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .single-slider-bg-2 {
-  background-image: url("../img/slider/slider-2.png");
+  background-image: url('../img/slider/slider-2.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .single-slider-bg-3 {
-  background-image: url("../img/slider/slider-3.png");
+  background-image: url('../img/slider/slider-3.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -610,7 +610,7 @@ i.fas.fa-arrow-up {
   text-align: center;
   align-items: center;
 }
-.Recommended-section{
+.Recommended-section {
   padding-top: 10px;
   padding-bottom: 50px;
 }
@@ -646,7 +646,7 @@ i.fas.fa-arrow-up {
 
 .circle-shape::after {
   position: absolute;
-  content: "";
+  content: '';
   background: #fff;
   width: 33px;
   height: 32px;
@@ -698,7 +698,7 @@ i.fas.fa-arrow-up {
 
 .f-product::after {
   position: absolute;
-  content: "";
+  content: '';
   background: rgb(255, 255, 255);
   width: 33px;
   height: 32px;
@@ -789,7 +789,7 @@ ul#myTab {
 
 .f-product-tab::after {
   position: absolute;
-  content: "";
+  content: '';
   background: rgb(255, 255, 255);
   width: 33px;
   height: 32px;
@@ -861,7 +861,6 @@ ul#myTab {
 
 .about-bg {
   padding: 100px 0px;
-  background-image: url("../img/about-us-img/About-us-bg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

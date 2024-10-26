@@ -1,0 +1,64 @@
+<section class="pb-70">
+  <div class="container">
+    <div class="row">
+      <div class="recommended-text-box pb-30">
+        <h2 class="heading-text">{{ section.settings.title }}</h2>
+        <span class="line-2"> </span>
+      </div>
+      <div class="f-product-box-1 d-flex align-items-center">
+        {% for featured_product in section.settings.product_collection %}
+          <div class="f-product pl-20">
+            <img
+              src="{{ featured_product.featured_image |  image_url: width:210, height:210  }}"
+              alt=""
+              class="b-img"
+              width="200px"
+              height="200px"
+            >
+            <span class="heart-icon-1">
+              <i class="fas fa-heart"></i>
+            </span>
+            <div class="card-text pt-20">
+              <h6>{{ featured_product.title }}</h6>
+              <span class="rating">
+                <img src="img/categorise-img/rating.png" alt="" class="rating-img">
+                <span class="rating-count">(10,002)</span>
+              </span>
+              <span class="price">${{ featured_product.price | divided_by: 100.00 }}</span>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="btn-black m-auto f-product-btn">
+        <span>SHOP NOW</span>
+      </div>
+    </div>
+    <!-- row end -->
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Category Copy",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Collection Title",
+      "default": "Product Categories"
+    },
+    {
+      "type": "product_list",
+      "id": "product_collection",
+      "label": "Product Category Collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Category Copy",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

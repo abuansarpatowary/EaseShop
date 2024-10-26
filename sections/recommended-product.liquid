@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row d-flex align-items-center">
+    <div class="recommended-text-box">
+      <h2 class="heading-text">Recommended for you</h2>
+      <div class="btn-black">
+        <span>SHOP NOW</span>
+      </div>
+    </div>
+    <span class="line pt-20"></span>
+  </div>
+</div>
+
+<div class="card-box">
+  <div class="owl-carousel owl-theme">
+    {% for product in section.settings.recommended_products %}
+      <div class="item circle-shape">
+        <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+        <span class="heart-icon">
+          <i class="fas fa-heart"></i>
+        </span>
+        <div class="card-text pt-20">
+          <h6>{{ product.title }}</h6>
+          <span class="rating">
+            <img src="{{ 'rating.png' | asset_url }}" alt="Rating" class="rating-img">
+            <span class="rating-count">({{ product.metafields.custom.rating_count }})</span>
+          </span>
+          <span class="price">{{ product.price | money }}</span>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% javascript %}
+  // owlCarousel
+  $('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 0,
+    items: 1,
+    navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+    nav: true,
+    dots: false,
+    responsive: {
+      0: {
+        items: 1,
+        nav: false,
+      },
+      767: {
+        items: 3,
+        nav: false,
+      },
+      992: {
+        items: 4,
+      },
+    },
+  });
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Recommended Product",
+  "class": "Recommended-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "product_list",
+      "id": "recommended_products",
+      "label": "Recommended Products",
+      "limit": 6
+    }
+  ],
+  "presets": [
+    {
+      "name": "Recommended Product Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

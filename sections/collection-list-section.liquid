@@ -1,0 +1,85 @@
+<div class="container">
+  <ul class="categories-list">
+    {% for i in (1..section.settings.collections_to_show) %}
+      {% assign collection_key = 'collection_' | append: i %}
+      {% assign collection = section.settings[collection_key] %}
+      {% if collection %}
+        <a href="{{ collection.url }}" class="categories-item text-center">
+          <li>
+            <img src="{{ collection.image | img_url: '100x100' }}" alt="{{ collection.title }}">
+            <span class="d-block pt-15">{{ collection.title }}</span>
+          </li>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+{
+  "name": "Collection List Section",
+  "tag": "div",
+  "class": "categories-section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "collections_to_show",
+      "label": "Number of Collections to Display",
+      "min": 1,
+      "max": 9,
+      "default": 8
+    },
+    {
+      "type": "collection",
+      "id": "collection_1",
+      "label": "Select Collection 1"
+    },
+    {
+      "type": "collection",
+      "id": "collection_2",
+      "label": "Select Collection 2"
+    },
+    {
+      "type": "collection",
+      "id": "collection_3",
+      "label": "Select Collection 3"
+    },
+    {
+      "type": "collection",
+      "id": "collection_4",
+      "label": "Select Collection 4"
+    },
+    {
+      "type": "collection",
+      "id": "collection_5",
+      "label": "Select Collection 5"
+    },
+    {
+      "type": "collection",
+      "id": "collection_6",
+      "label": "Select Collection 6"
+    },
+    {
+      "type": "collection",
+      "id": "collection_7",
+      "label": "Select Collection 7"
+    },
+    {
+      "type": "collection",
+      "id": "collection_8",
+      "label": "Select Collection 8"
+    },
+    {
+      "type": "collection",
+      "id": "collection_9",
+      "label": "Select Collection 9"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection List Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
