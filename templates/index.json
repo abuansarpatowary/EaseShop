@@ -73,6 +73,29 @@
         ]
       }
     },
+    "175640376804e8a643": {
+      "type": "apps",
+      "blocks": {
+        "nitro_lookbook_lookbook_block_ebBjn6": {
+          "type": "shopify://apps/nitro-lookbook/blocks/lookbook-block/cc1f7d0a-9bac-40f1-a181-859d84a3417f",
+          "settings": {
+            "lookbook_id": "77922e94-3737-4a4e-8777-93bc6e7f5007",
+            "heading": "",
+            "sub_heading": "",
+            "heading_font_size": "1.2",
+            "heading_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "nitro_lookbook_lookbook_block_ebBjn6"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "collection_category": {
       "type": "featured-product-section",
       "settings": {
@@ -86,44 +109,14 @@
         "title": "Discover unique hand-picked items",
         "useslider": true
       }
-    },
-    "17564033588006538a": {
-      "type": "apps",
-      "blocks": {
-        "lookfy_gallery_lookfy_gallery_kmKKn9": {
-          "type": "shopify://apps/lookfy-gallery/blocks/lookfy-gallery/596af5f6-9933-4730-95c2-f7d8d52a0c3e",
-          "settings": {
-            "gallery_id": 30779,
-            "dynamic_source": "",
-            "title": "",
-            "subtitle": "",
-            "heading_size": "0.8",
-            "heading_color": "",
-            "heading_align": "left",
-            "desc_style": "subtitle",
-            "desc_color": "",
-            "custom_class": "",
-            "background_color": "",
-            "padding_top": 36,
-            "padding_bottom": 36,
-            "padding_left_right": 0
-          }
-        }
-      },
-      "block_order": [
-        "lookfy_gallery_lookfy_gallery_kmKKn9"
-      ],
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
     "header_slider",
     "collection_list_section",
     "recomended_products",
+    "175640376804e8a643",
     "collection_category",
-    "unique_product_section",
-    "17564033588006538a"
+    "unique_product_section"
   ]
 }
