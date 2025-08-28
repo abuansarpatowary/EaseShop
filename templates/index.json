@@ -55,16 +55,13 @@
         "slide3",
         "slide4"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "collection_list_section": {
       "type": "collection-list-section",
       "settings": {
         "collections_to_show": 8,
-        "collections": [
-
-        ]
+        "collections": []
       }
     },
     "recomended_products": {
@@ -80,9 +77,7 @@
       "type": "featured-product-section",
       "settings": {
         "title": "Product Categories",
-        "product_collection": [
-
-        ]
+        "product_collection": []
       }
     },
     "unique_product_section": {
@@ -91,6 +86,36 @@
         "title": "Discover unique hand-picked items",
         "useslider": true
       }
+    },
+    "17564033588006538a": {
+      "type": "apps",
+      "blocks": {
+        "lookfy_gallery_lookfy_gallery_kmKKn9": {
+          "type": "shopify://apps/lookfy-gallery/blocks/lookfy-gallery/596af5f6-9933-4730-95c2-f7d8d52a0c3e",
+          "settings": {
+            "gallery_id": 30779,
+            "dynamic_source": "",
+            "title": "",
+            "subtitle": "",
+            "heading_size": "0.8",
+            "heading_color": "",
+            "heading_align": "left",
+            "desc_style": "subtitle",
+            "desc_color": "",
+            "custom_class": "",
+            "background_color": "",
+            "padding_top": 36,
+            "padding_bottom": 36,
+            "padding_left_right": 0
+          }
+        }
+      },
+      "block_order": [
+        "lookfy_gallery_lookfy_gallery_kmKKn9"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -98,6 +123,7 @@
     "collection_list_section",
     "recomended_products",
     "collection_category",
-    "unique_product_section"
+    "unique_product_section",
+    "17564033588006538a"
   ]
 }
